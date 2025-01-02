@@ -1,0 +1,568 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Riviera Nights", "Gill Alt One MT", Helvetica, Arial, -apple-system, sans-serif;
+}
+a{
+    cursor: none;
+}
+body {
+    cursor: none;
+}
+
+.custom-cursor {
+    width: 2vw;
+    height: 2vw;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 2px solid;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+}
+
+.frontPageNav {
+    display: flex;
+    justify-content: space-around;
+}
+
+.video1 {
+    filter: brightness(0.7);
+}
+
+.nav {
+    position: fixed;
+    color: #fff;
+    font-weight: 300;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 1.9vw 1vw;
+    font-size: 0.9vw;
+}
+
+.nav ul {
+    list-style: none;
+}
+
+.off-Screen-Menu {
+    backdrop-filter: blur(1vw);
+    color: #fff;
+    position: fixed;
+    height: 98.9vh;
+    max-width: 50%;
+    padding: 5vw 5vw;
+    display: flex;
+    justify-content: end;
+    width: 32%;
+    top: 0vw;
+    left: -200vw;
+    line-height: 5vw;
+    font-size: 1.2vw;
+    transition: .8s ease;
+
+    li {
+        list-style: none;
+    }
+}
+
+.off-Screen-Menu.active {
+    left: 0;
+    text-align: right;
+}
+.off-Screen-Menu-items {
+    opacity: 0;
+    transform: translateX(-100%);
+    animation: slideIn 1s forwards;
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.off-Screen-Menu-items:nth-child(1) { animation-delay: 0.1s; }
+.off-Screen-Menu-items:nth-child(2) { animation-delay: 0.2s; }
+.off-Screen-Menu-items:nth-child(3) { animation-delay: 0.3s; }
+.off-Screen-Menu-items:nth-child(4) { animation-delay: 0.4s; }
+.off-Screen-Menu-items:nth-child(5) { animation-delay: 0.5s; }
+.off-Screen-Menu-items:nth-child(6) { animation-delay: 0.6s; }
+.off-Screen-Menu-items:nth-child(7) { animation-delay: 0.7s; }
+.nav-1 {
+    width: 15.5vw;
+    text-align: start;
+    display: flex;
+    align-items: center;
+    gap: 0.5vw;
+}
+
+#Sp1 {
+    position: relative;
+    top: -0.5vw;
+    left: -10vw;
+}
+
+.icon1 {
+    position: relative;
+    left: -10vw;
+    top: -.5vw;
+    width: 2vw;
+    height: 5vh;
+    overflow: hidden;
+    padding: 1vw 0 .2vw .1vw;
+
+    hr {
+        border: 2px solid #fff;
+        margin: 0.1vw;
+    }
+}
+
+.icon1:hover>.b1 {
+    position: relative;
+    animation: ram 0.5s;
+    overflow: hidden;
+}
+
+.icon1:hover>.b2 {
+    position: relative;
+    overflow: hidden;
+    animation: ram1 0.6s linear;
+}
+
+.icon1:hover>.b3 {
+    position: relative;
+    animation: ram1 0.8s linear;
+}
+
+.b1 {
+    display: flex;
+    margin-top: -0.8vh;
+}
+
+.b2 {
+    width: 60%;
+    margin-top: -0.8vh;
+}
+
+.b3 {
+    width: 60%;
+    margin-top: -0.8vh;
+}
+
+.b12 {
+    width: 40%;
+}
+
+.b13 {
+    width: 2%;
+}
+
+@keyframes ram {
+    0% {
+        right: 0vw;
+    }
+
+    100% {
+        right: 1.5vw;
+    }
+}
+
+@keyframes ram1 {
+    0% {
+        right: 0vw;
+    }
+
+    100% {
+        right: 1.5vw;
+    }
+}
+
+/* Initial styles for the lines */
+.b2,
+.b3 {
+    transition: transform 0.3s, top 0.3s, bottom 0.3s;
+}
+
+/* Styles when the menu is active */
+.active .b2 {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+.active .b3 {
+    transform: rotate(-45deg);
+    bottom: 0;
+}
+
+
+.nav-2 {
+    width: 33.5vw;
+    text-align: center;
+}
+
+.nav-3 {
+    width: 17.5vw;
+    text-align: end;
+    letter-spacing: .1vw;
+
+    ul {
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 10%;
+    }
+}
+
+.nav-3:hover+.icon2 {
+    transform: rotate(360deg);
+    transition: 1s;
+}
+
+.nav-3 i:hover {
+    transform: rotate(360deg);
+    transition: 1s;
+}
+
+.textFrontPage {
+    position: absolute;
+    top: 15.5vw;
+    line-height: 4.5vw;
+    font-family: -apple-system, sans-serif;
+    color: #fff;
+    font-weight: lighter;
+    text-align: center;
+    animation: firstPageAnime1 1s ease-out forwards;
+}
+
+.textFrontPage1 {
+    animation: firstPageAnime1 1s forwards;
+    animation-delay: 0.1s;
+}
+
+.textFrontPage2 {
+    animation: firstPageAnime1 1s forwards;
+    animation-delay: 0.3s;
+}
+
+.textFrontPage3 {
+    animation: firstPageAnime1 1s forwards;
+    animation-delay: 0.4s;
+
+    i {
+        opacity: 0;
+    }
+}
+
+.arrowIcon:hover {
+    opacity: 1;
+}
+
+.textFrontPage3:hover+.arrowIcon i {
+    opacity: 1;
+}
+
+#cul {
+    font-size: 6vw;
+    letter-spacing: .2vw;
+    font-weight: 100;
+}
+
+#Ser {
+    font-size: 1.5vw;
+    letter-spacing: .5vw;
+    font-weight: 200;
+}
+
+button {
+    border: none;
+    background: #fff;
+    padding: .9vw;
+    font-size: 1vw;
+    letter-spacing: 0.139vw;
+    border-radius: 2vw;
+    width: 19vw;
+}
+
+button:hover {
+    cursor: none;
+}
+
+@keyframes firstPageAnime1 {
+    0% {
+        opacity: 0;
+        transform: translateY(4vw);
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.text1:hover+.icon2 {
+    position: relative;
+    animation: a 1s;
+}
+
+@keyframes a {
+    0% {
+        transform: 0;
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* .off-screen-dealer-page{
+    background: #281432;
+    width:98.9vw;
+    position: relative;
+    bottom:0;
+    opacity: 0;
+    height:5vw;
+    height:100.9vw;
+    h1{
+        font-weight:100;
+        letter-spacing:.1vw;
+        font-size:2.5vw;
+    }
+    p{
+        width: 27vw;
+        font-weight: 100;
+        color: lightcyan;
+        font-size:0.9vw;
+    }
+    input{
+        caret-color:#fff;
+    background: #1b0d2e;
+        color:#fff;
+        padding:1.5vw;
+        border-right: none;
+        width:30vw;
+    }
+}
+.Off-scrn-nav{
+    background: #1b0d2e;
+} */
+
+
+/* Styles for the off-screen dealer page */
+.off-screen-dealer-page {
+    position: fixed;
+    /* bottom: -100%; */
+    left: -50vw;
+    top: -20vw;
+    width: 115vw;
+    background: white;
+    color: black;
+    /* z-index:10000; */
+    height: 60.5vw;
+    transition: bottom 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+}
+
+.off-screen-dealer-page.active {
+    bottom: 0;
+    opacity: 1;
+}
+
+.secondPage {
+    background-image: url('RRSecondImage.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 180vh;
+    display: flex;
+    /* align-content: center; */
+    justify-content: center;
+    color: #fff;
+}
+
+.secondPage h1 {
+    font-size: 5vw;
+    font-weight: 100;
+    align-self: center;
+    letter-spacing: 1vw;
+    position: relative;
+    left: 9vw;
+    animation: SecondPageAnimation .6s linear;
+}
+
+.secondPage button {
+    border: none;
+    align-self: center;
+    background: #fff;
+    padding: .9vw;
+    font-size: 1vw;
+    letter-spacing: 0.139vw;
+    border-radius: 2vw;
+    width: 19vw;
+    position: relative;
+    top: 6vw;
+    left: -35vw;
+    animation: SecondPageAnimation2 .8s .2s linear;
+}
+
+@keyframes SecondPageAnimation {
+    0% {
+        top: 5vw;
+        opacity: 0;
+    }
+
+    100% {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes SecondPageAnimation2 {
+    0% {
+        top: 10vw;
+        opacity: 0;
+    }
+
+    100% {
+        top: 5vw;
+        opacity: 1;
+    }
+}
+
+.ThirdCartPage {
+    background: #2a2828;
+    color: #fff;
+    /* position: fixed; */
+    /* height: 100%; */
+    top: 30vw;
+    padding: 4vw;
+
+    h2 {
+        text-align: center;
+        position: relative;
+        top: 5vw;
+        font-weight: 200;
+    }
+
+    .ThirdCartPageh3 {
+        text-align: center;
+        position: relative;
+        top: 5.9vw;
+        font-weight: lighter;
+
+
+    }
+}
+
+.cart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #2a2828;
+    color: #fff;
+    width: 100%;
+    height: 120vh;
+    font-size:1vw;
+    overflow: hidden;
+    h3{
+        letter-spacing:0.1vw;
+        font-weight: 100;
+    }
+}
+
+.cart img {
+    width: 27vw;
+    transition: transform 0.3s ease;
+}
+.heading31,.heading32,.heading33{
+    position: relative;
+    padding-top:1.5vw;
+    left:2.4vw;
+}
+p {
+    margin: 1vw 2.5vw;
+    font-size: 1vw;
+    line-height: 1.8vw;
+    width: 25vw;
+    font-weight: 100;
+}
+.cart-1,.cart-2,.cart-3{
+    overflow: hidden; 
+    position: relative;
+}
+.cart img:hover {
+    overflow: hidden;
+    object-fit: cover;
+    filter: brightness(0.8);
+    transition: 0.5s;
+    transform: scale(1.05);
+}
+
+.ForthLastPage {
+    width: 100%;
+    background: #151515;
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+}
+
+.text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.ForthLastPage span {
+    font-size: 1.2vw;
+    margin-top: 5vw 0;
+}
+
+.ForthLastPage p {
+    font-size: 0.5vw;
+    position: relative;
+}
+
+.lastSection {
+    background: #151515;
+    display: flex;
+    flex-wrap:wrap;
+    border-top:0.1px solid gray;
+    border-bottom:0.1px solid gray;
+    justify-content: space-around;
+    align-items: center;
+    margin:10vh;
+    height: 15vh;
+}
+.text{
+    background:#151515;
+    position: relative;
+    text-align: center;
+    line-height:0.1vw;
+    top: 3vw;
+    /* height: 0.1vh; */
+    color: #d0c6c6;
+    padding-top: 3vw;
+    font-weight: 100;
+    p{
+        top:-1vw;
+    }
+}
+
+.lastSection a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.content {
+    border-left: 0.1px solid gray;
+    margin: 0;
+    height: 30vh;
+}
+
+.AllPAge {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    padding-bottom: 46vh;
+}
